@@ -22,5 +22,4 @@ public class ItemsController
         return  this.itemsClient.findAllItems().collectList()
                 .doOnNext(items -> model.addAttribute("items", items)).thenReturn("customer/items/list");
     }
-
 }

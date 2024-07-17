@@ -1,9 +1,8 @@
-best-store:
+selmag:
   services:
     catalogue:
-      uri: lb://catalogue-service
-      username: admin
-      password: admin
+      uri: http://localhost:8081
+      registration-id: keycloak
 spring:
   security:
     oauth2:
@@ -15,20 +14,9 @@ spring:
         registration:
           keycloak:
             client-id: manager-app
-            client-secret: OiR0J5eoxLXhy0ZNn7rGgJh7CPsV3n1O
+            client-secret: XulFdTA38JcM2J2OEp6u55YcVlT5Onya
             scope:
               - openid
               - view_catalogue
               - edit_catalogue
               - microprofile-jwt
-  application:
-    name: manager-service
-eureka:
-  instance:
-    prefer-ip-address: true
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka/
-
-
-

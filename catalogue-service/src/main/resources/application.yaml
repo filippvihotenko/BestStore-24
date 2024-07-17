@@ -1,10 +1,18 @@
 spring:
-  application:
-    name: catalogue-service
-  config:
-    import: 'optional:configserver:'
-  cloud:
-    config:
-      uri: http://localhost:8888
+  datasource:
+    url: jdbc:postgresql://localhost:5432/catalogue
+    username: catalogue
+    password: catalogue
+
+  jpa:
+    show-sql: true
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8082/realms/beststore
 server:
   port: 8081
+logging:
+  level:
+    sql: info
